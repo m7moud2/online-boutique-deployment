@@ -11,7 +11,7 @@ services:
     restart: unless-stopped
 
   emailservice:
-    image: gcr.io/google-samples/microservices-demo/emailservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/emailservice:v0.9.0
     container_name: boutique_emailservice
     environment:
       - PORT=8080
@@ -21,7 +21,7 @@ services:
     restart: unless-stopped
 
   checkoutservice:
-    image: gcr.io/google-samples/microservices-demo/checkoutservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/checkoutservice:v0.9.0
     container_name: boutique_checkoutservice
     environment:
       - PORT=5050
@@ -44,7 +44,7 @@ services:
     restart: unless-stopped
 
   recommendationservice:
-    image: gcr.io/google-samples/microservices-demo/recommendationservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/recommendationservice:v0.9.0
     container_name: boutique_recommendationservice
     environment:
       - PORT=8080
@@ -57,7 +57,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: gcr.io/google-samples/microservices-demo/frontend:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/frontend:v0.9.0
     container_name: boutique_frontend
     ports:
       - "${FRONTEND_PORT:-8080}:8080"
@@ -84,7 +84,7 @@ services:
     restart: unless-stopped
 
   paymentservice:
-    image: gcr.io/google-samples/microservices-demo/paymentservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/paymentservice:v0.9.0
     container_name: boutique_paymentservice
     environment:
       - PORT=50051
@@ -94,7 +94,7 @@ services:
     restart: unless-stopped
 
   productcatalogservice:
-    image: gcr.io/google-samples/microservices-demo/productcatalogservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/productcatalogservice:v0.9.0
     container_name: boutique_productcatalogservice
     environment:
       - PORT=3550
@@ -104,7 +104,7 @@ services:
     restart: unless-stopped
 
   cartservice:
-    image: gcr.io/google-samples/microservices-demo/cartservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/cartservice:v0.9.0
     container_name: boutique_cartservice
     environment:
       - PORT=7070
@@ -117,7 +117,7 @@ services:
     restart: unless-stopped
 
   loadgenerator:
-    image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.9.0
     container_name: boutique_loadgenerator
     environment:
       - FRONTEND_ADDR=frontend:8080
@@ -129,7 +129,7 @@ services:
     restart: unless-stopped
 
   currencyservice:
-    image: gcr.io/google-samples/microservices-demo/currencyservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/currencyservice:v0.9.0
     container_name: boutique_currencyservice
     environment:
       - PORT=7000
@@ -139,7 +139,7 @@ services:
     restart: unless-stopped
 
   shippingservice:
-    image: gcr.io/google-samples/microservices-demo/shippingservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/shippingservice:v0.9.0
     container_name: boutique_shippingservice
     environment:
       - PORT=50051
@@ -149,7 +149,7 @@ services:
     restart: unless-stopped
 
   adservice:
-    image: gcr.io/google-samples/microservices-demo/adservice:v0.2.0
+    image: gcr.io/google-samples/microservices-demo/adservice:v0.9.0
     container_name: boutique_adservice
     environment:
       - PORT=9555
