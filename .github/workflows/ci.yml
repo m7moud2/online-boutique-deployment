@@ -1,0 +1,27 @@
+name: Lint & Validate Deployments
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-specs:
+    name: Validate Compose & Kubernetes Manifests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose Configuration
+        run: docker compose config
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Validate Kubernetes Manifests (Dry-Run)
+        run: kubectl apply --dry-run=client -f k8s/complete-deployment.yaml
